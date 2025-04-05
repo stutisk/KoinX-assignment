@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Navbar } from './assets/components/navbar';
-import { Homepage } from './assets/pages/Homepage';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+// import { Navbar } from "./components/Home";
+import { Homepage } from "./pages/Homepage";
+import {  NavProvider } from "./Context/navContext";
 
 function App() {
   // const [displayedText, setDisplayedText] = useState("");
@@ -18,10 +19,12 @@ function App() {
   // }, [text]);
 
   return (
-  <div className='font-mono'>
-  {/* <Navbar/> */}
-  <Homepage/>
-  </div>
+   <NavProvider>
+    <div>
+
+      <Homepage />
+    </div>
+    </NavProvider>
   );
 }
 
